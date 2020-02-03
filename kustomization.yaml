@@ -1,0 +1,7 @@
+commonLabels:
+  super: Simpleapp
+imageTags:
+  - name: jwilliams12/simpleapp
+    newTag: 1.0.1
+resources:
+- deployment.yaml
