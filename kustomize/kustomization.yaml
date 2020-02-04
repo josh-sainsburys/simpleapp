@@ -1,5 +1,5 @@
 commonLabels:
-  super: Simpleapp
+  app: Simpleapp
 imageTags:
   - name: jwilliams12/simpleapp
     newTag: 1.0.2
