@@ -1,5 +1,5 @@
 imageTags:
   - name: jwilliams12/simpleapp
-    newTag: 1.0.7
+    newTag: 1.0.8
 resources:
 - deployment.yaml
