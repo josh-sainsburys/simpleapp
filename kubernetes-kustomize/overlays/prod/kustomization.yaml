@@ -3,3 +3,4 @@ imageTags:
     newTag: 1.0.16
 resources:
 - deployment.yaml
+- service.yaml
