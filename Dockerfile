@@ -1,7 +1,10 @@
-FROM nginx
+FROM python:3.7
 
-COPY wrapper.sh /
+ENV TARGET_DIR /simpleapp
+WORKDIR /simpleapp
+ADD ./requirements.txt ${TARGET_DIR}/
+COPY templates ${TARGET_DIR}/templates/
+COPY app.py ${TARGET_DIR}
+RUN pip install -r requirements.txt
 
-COPY html /usr/share/nginx/html
-
-CMD ["./wrapper.sh"]
+CMD ["python", "app.py"]
