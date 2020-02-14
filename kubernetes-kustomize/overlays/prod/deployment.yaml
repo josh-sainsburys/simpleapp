@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: simpleapp
+    environment: prod
   name: simpleapp
 spec:
   replicas: 3

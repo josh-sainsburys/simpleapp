@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  environment: uat
   labels:
     app: simpleapp
+    environment: uat
   name: simpleapp
 spec:
   replicas: 3

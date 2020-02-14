@@ -1,18 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  environment: '${ parameters.environment }'  
-  name: app
+  labels:
+    app: simpleapp
+    environment: '${ parameters.environment }'
+  name: simpleapp
 spec:
   replicas: 3
   selector:
     matchLabels:
-      id: app
+      app: simpleapp
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 25%
+    type: RollingUpdate
   template:
     metadata:
       labels:
-        id: app
+        app: simpleapp
     spec:
       containers:
-      - image: XXX # needs to be overridden by environments
-        name: nginx
+        - image: jwilliams12/simpleapp
+          imagePullPolicy: Always
+          name: simpleapp
+          ports:
+            - containerPort: 80
