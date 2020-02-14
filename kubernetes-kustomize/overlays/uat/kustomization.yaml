@@ -1,7 +1,4 @@
 imageTags:
-  - metadata:
-    labels:
-    environment: uat
   - name: jwilliams12/simpleapp
     newTag: 1.0.18
 resources:
