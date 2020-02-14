@@ -1,14 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: label-demo
+  name: simpleapp
   labels:
     environment: '${ parameters.environment }'
-    app: nginx
 spec:
+  selector:
+    app: simpleapp
   ports:
-    containers:
-    - name: nginx
-      image: nginx:1.7.9
-      ports:
-      - containerPort: 80
+  - name: http
+    port: 80
+    targetPort: 5000
